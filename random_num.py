@@ -1,18 +1,12 @@
 import numpy as np
-import time
 
 def game_core_v3(number):
-    '''Сначала устанавливаем любое random число, а потом уменьшаем или увеличиваем его
-       в зависимости от того, больше оно или меньше нужного.
-       Функция принимает загаданное число и возвращает число попыток'''
     count = 0
     predict = 50
-    corr = 50
+    corr = predict
     while number != predict:
         count+=1
         corr = int(round(corr/2+0.1, 0))
-        # print(number, predict, corr)
-        # time.sleep(10)
         if number > predict: 
             predict += corr
         elif number < predict: 
