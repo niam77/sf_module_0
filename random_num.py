@@ -7,14 +7,16 @@ def game_core_v3(number):
        Функция принимает загаданное число и возвращает число попыток'''
     count = 0
     predict = 50
+    corr = 50
     while number != predict:
         count+=1
-        print(number, predict)
-        time.sleep(10)
+        corr = int(round(corr/2+0.1, 0))
+        # print(number, predict, corr)
+        # time.sleep(10)
         if number > predict: 
-            predict += int(round(predict/2+0.1, 0))
+            predict += corr
         elif number < predict: 
-            predict -= int(round(predict/2+0.1, 0))
+            predict -= corr
     return(count) # выход из цикла, если угадали
         
         
