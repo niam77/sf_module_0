@@ -15,3 +15,4 @@ b = np.array([
 ])
 
 print(np.dot(a, b))
+print(a)
